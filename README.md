@@ -21,6 +21,8 @@
 
 # Apache Blinky
 
+[![Build Status](https://travis-ci.org/kaidokert/mynewt-blinky.svg?branch=master)](https://travis-ci.org/kaidokert/mynewt-blinky)
+
 ## Overview
 
 Apache Blinky is a skeleton for new Apache Mynewt projects.  The user downloads
