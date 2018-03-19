@@ -44,3 +44,6 @@ script:
 - newt build $TARGET
 - newt test all -e net/nimble/host,net/oic/test
 
+cache:
+  directories:
+  - $HOME/TC

@@ -20,9 +20,11 @@ esac
 
 mkdir -p $TC_HOME
 
-wget -O ${TC_HOME}/${GCC_BASE}.tar.bz2 $GCC_URL
-tar xfj ${TC_HOME}/${GCC_BASE}.tar.bz2 -C $TC_HOME
-${TC_HOME}/$GCC_BASE/bin/arm-none-eabi-gcc --version
+if [ ! -s ${TC_HOME}/$GCC_BASE/bin/arm-none-eabi-gcc ]; then
+  wget -O ${TC_HOME}/${GCC_BASE}.tar.bz2 $GCC_URL
+  tar xfj ${TC_HOME}/${GCC_BASE}.tar.bz2 -C $TC_HOME
+  ${TC_HOME}/$GCC_BASE/bin/arm-none-eabi-gcc --version
+fi
 
 for i in ${TC_HOME}/${GCC_BASE}/bin/arm-none-eabi-* ; do
     rm -f  ~/bin/${i##*/}
