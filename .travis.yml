@@ -1,0 +1,41 @@
+language: go
+
+_sources: &repos
+  - ubuntu-toolchain-r-test
+  - llvm-toolchain-trusty
+  - llvm-toolchain-trusty-4.0
+  - llvm-toolchain-trusty-5.0
+
+go:
+  - 1.8
+
+matrix:
+  include:
+    - os: linux
+      env: TEST=1 TARGET=nrf52_blinky
+      addons:
+        apt:
+          packages: ['gcc-multilib','gcc-arm-none-eabi']
+          sources: *repos
+    - os: osx
+      osx_image: xcode9.2
+      env: TEST=2 TARGET=stm32f4disc_blinky
+
+before_install:
+- printenv
+- export GOPATH=$HOME/gopath
+- chmod +x ci/*.sh
+- go version
+- ci/${TRAVIS_OS_NAME}_travis_install.sh
+- newt version
+
+install:
+- echo "Skip default Go install step"
+
+script:
+- ${TRAVIS_BUILD_DIR}/ci/make_targets.sh
+- newt install
+- newt target show
+- newt build $TARGET
+- newt test all -e net/nimble/host,net/oic/test
+
