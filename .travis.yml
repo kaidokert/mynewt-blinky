@@ -6,17 +6,22 @@ _sources: &repos
   - llvm-toolchain-trusty-4.0
   - llvm-toolchain-trusty-5.0
 
+_addons: &addon_conf
+  apt:
+    packages: ['gcc-multilib']
+    sources: *repos
+
 go:
   - 1.8
 
 matrix:
   include:
     - os: linux
-      env: TEST=1 TARGET=nrf52_blinky
-      addons:
-        apt:
-          packages: ['gcc-multilib','gcc-arm-none-eabi']
-          sources: *repos
+      env: TEST=1 TARGET=nrf52_blinky ARMGCC_VERSION=6.2.1
+      addons: *addon_conf
+    - os: linux
+      env: TEST=3 TARGET=nrf52_blinky ARMGCC_VERSION=7.2.1
+      addons: *addon_conf
     - os: osx
       osx_image: xcode9.2
       env: TEST=2 TARGET=stm32f4disc_blinky

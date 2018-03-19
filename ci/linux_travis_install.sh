@@ -23,3 +23,5 @@ go install mynewt.apache.org/newt/newt
 cp $GOPATH/bin/newt $HOME/bin
 
 cd $OLD_DIR
+
+. ci/linux_toolchain_install.sh
