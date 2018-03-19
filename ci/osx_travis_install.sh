@@ -2,6 +2,8 @@
 
 echo "Doing OSX install"
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 brew tap Caskroom/cask
 brew tap runtimeco/homebrew-mynewt
 
