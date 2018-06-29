@@ -42,7 +42,7 @@ script:
 - newt install
 - newt target show
 - newt build $TARGET
-- newt test all -e net/nimble/host,net/oic/test
+- newt test all -e net/nimble/host,net/oic/test,net/ip/mn_socket/test
 
 cache:
   directories:
