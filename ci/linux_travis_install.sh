@@ -16,7 +16,7 @@ rm -rf $GOPATH/bin $GOPATH/pkg
 
 cd $GOPATH/src/mynewt.apache.org/newt/
 
-git checkout mynewt_1_3_0_tag
+git checkout mynewt_1_4_1_tag
 
 go install mynewt.apache.org/newt/newt
 
