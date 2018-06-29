@@ -12,7 +12,7 @@ _addons: &addon_conf
     sources: *repos
 
 go:
-  - 1.10
+  - "1.10"
 
 matrix:
   include:
