@@ -2,6 +2,10 @@
 TC_HOME=$HOME/TC
 
 case $ARMGCC_VERSION in
+  "5.4.1")
+       GCC_URL=https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2
+       GCC_BASE=gcc-arm-none-eabi-5_4-2016q3
+       ;;
   "6.2.1")
        GCC_URL=https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2
        GCC_BASE=gcc-arm-none-eabi-6_2-2016q4

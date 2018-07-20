@@ -17,7 +17,7 @@ go:
 matrix:
   include:
     - os: linux
-      env: TEST=1 TARGET=nrf52_blinky ARMGCC_VERSION=6.2.1
+      env: TEST=1 TARGET=nrf52_blinky ARMGCC_VERSION=5.4.1
       addons: *addon_conf
     - os: linux
       env: TEST=3 TARGET=nrf52_blinky ARMGCC_VERSION=7.2.1
