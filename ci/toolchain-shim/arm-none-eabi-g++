@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/travis/bin/arm-none-eabi-g++ ${CXXFLAGS} "$@"

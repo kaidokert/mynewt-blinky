@@ -28,9 +28,18 @@
 #include "mcu/mcu_sim.h"
 #endif
 
+// cpp03 headers
 #include <vector>
 #include <utility>
 #include <numeric>
+
+// cpp14 headers
+#include <array>
+#include <tuple>
+#include <experimental/optional>
+#include <atomic>
+#include <ratio>
+#include <type_traits>
 
 static volatile int g_task1_loops;
 

@@ -1,0 +1,6 @@
+#!/bin/sh
+if [[ $@ =~ \.cpp$ ]] ; then
+${TC_HOME}/arm-none-eabi-gcc ${CXXFLAGS} "$@"
+else
+${TC_HOME}/arm-none-eabi-gcc "$@"
+fi
