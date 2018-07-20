@@ -6,7 +6,7 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *  http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
@@ -27,6 +27,10 @@
 #ifdef ARCH_sim
 #include "mcu/mcu_sim.h"
 #endif
+
+#include <vector>
+#include <utility>
+#include <numeric>
 
 static volatile int g_task1_loops;
 
@@ -68,4 +72,3 @@ main(int argc, char **argv)
 
     return rc;
 }
-
