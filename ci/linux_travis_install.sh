@@ -25,3 +25,5 @@ cp $GOPATH/bin/newt $HOME/bin
 cd $OLD_DIR
 
 . ci/linux_toolchain_install.sh
+
+chmod +x ci/toolchain-shim/arm*
