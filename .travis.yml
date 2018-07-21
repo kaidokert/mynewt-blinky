@@ -12,12 +12,12 @@ _addons: &addon_conf
     sources: *repos
 
 go:
-  - 1.8
+  - "1.10"
 
 matrix:
   include:
     - os: linux
-      env: TEST=1 TARGET=nrf52_blinky ARMGCC_VERSION=6.2.1
+      env: TEST=1 TARGET=nrf52_blinky ARMGCC_VERSION=5.4.1
       addons: *addon_conf
     - os: linux
       env: TEST=3 TARGET=nrf52_blinky ARMGCC_VERSION=7.2.1
@@ -39,10 +39,13 @@ install:
 
 script:
 - ${TRAVIS_BUILD_DIR}/ci/make_targets.sh
+- export CXXFLAGS="-std=c++14"
+- export TC_HOME="/home/travis/bin"
+- export PATH=${PWD}/ci/toolchain-shim/:$PATH
 - newt install
 - newt target show
 - newt build $TARGET
-- newt test all -e net/nimble/host,net/oic/test
+- newt test all -e net/nimble/host,net/oic/test,net/ip/mn_socket/test
 
 cache:
   directories:
