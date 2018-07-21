@@ -39,7 +39,7 @@ install:
 
 script:
 - ${TRAVIS_BUILD_DIR}/ci/make_targets.sh
-- export CXXFLAGS="-std=cpp14"
+- export CXXFLAGS="-std=c++14"
 - export TC_HOME="/home/travis/bin"
 - export PATH=${PWD}/ci/toolchain-shim/:$PATH
 - newt install
